@@ -5,7 +5,7 @@ const currentOutput = output.textContent;
 input.addEventListener("input", onInputChange);
 
 function onInputChange(event) {
-  input.value.trim().length > 0
-    ? (output.textContent = event.currentTarget.value)
-    : (output.textContent = currentOutput);
+  input.value === ''
+    ? (output.textContent = currentOutput)
+    : (output.textContent = event.currentTarget.value);
 }
