@@ -1,16 +1,15 @@
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215)
-//     .toString(16)
-//     .padStart(6, 0)}`;
-// }
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
 
-
-const createRGB = () => {
-  const red = Math.round(Math.random(0, 1)* 255);
-  const green = Math.round(Math.random(0, 1)* 255);
-  const blue = Math.round(Math.random(0, 1)* 255)
-  return `rgb(${red}, ${green}, ${blue})`
-};
+// const createRGB = () => {
+//   const red = Math.round(Math.random(0, 1) * 255);
+//   const green = Math.round(Math.random(0, 1) * 255);
+//   const blue = Math.round(Math.random(0, 1) * 255);
+//   return `rgb(${red}, ${green}, ${blue})`;
+// };
 
 const refs = {
   input: document.querySelector("input"),
@@ -48,7 +47,7 @@ function createBoxes() {
   }
   for (let i = 1; i <= amount; i++) {
     let growingSize = size + i * 10;
-    const boxEl = `<div style="width:${growingSize}px; height:${growingSize}px; background-color:${createRGB()}"></div>`;
+    const boxEl = `<div style="width:${growingSize}px; height:${growingSize}px; background-color:${getRandomHexColor()}"></div>`;
     boxesArr.push(boxEl);
   }
   refs.boxes.insertAdjacentHTML("beforeend", boxesArr.join(""));
